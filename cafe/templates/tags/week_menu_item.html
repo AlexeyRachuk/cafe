@@ -31,7 +31,7 @@
                                             <div class="tab-item">
                                                 <img src="{{ week_menu_item.photo.url }}" alt="{{ week_menu_item.title }}">
                                                 <h4>{{ week_menu_item.title }}</h4>
-                                                <p>{{ week_menu_item.descr }}</p>
+                                                <p>{{ week_menu_item.descr|safe }}</p>
                                                 <div class="price">
                                                     <h6>{{ week_menu_item.price }} ₽</h6>
                                                 </div>

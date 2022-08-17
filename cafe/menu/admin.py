@@ -1,8 +1,18 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from solo.admin import SingletonModelAdmin
+from django import forms
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import Menu, AboutMenu
+
+
+class MenuAdminForm(forms.ModelForm):
+    descr = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Menu
+        fields = '__all__'
 
 
 @admin.register(AboutMenu)
@@ -16,6 +26,7 @@ class Menu(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name', 'price')
     list_editable = ('draft',)
+    form = MenuAdminForm
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.photo.url} width="50" height="60"')

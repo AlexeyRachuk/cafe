@@ -5,7 +5,7 @@
         <div class="thumb">
             <div class="overlay"></div>
             <ul class="social-icons">
-                <span style="color:#fff;">{{ chefs_item.descr }}</span><br><br>
+                <span style="color:#fff;">{{ chefs_item.descr|safe }}</span><br><br>
                 <li><a href="{{ chefs_item.instagram }}"><i class="fa fa-instagram"></i></a></li>
             </ul>
             <img src="{{ chefs_item.photo.url }}" alt="Chef #1">

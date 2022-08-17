@@ -10,7 +10,7 @@
                         <h6>{{ about.title }}</h6>
                         <h2>{{ about.subtitle }}</h2>
                     </div>
-                    <p>{{ about.text }}</p>
+                    <p>{{ about.text|safe }}</p>
                     {% get_about_photo %}
                 </div>
             </div>

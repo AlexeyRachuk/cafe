@@ -1,7 +1,17 @@
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
+from django import forms
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import Main, MainMenu, Form
+
+
+class MainAdminForm(forms.ModelForm):
+    text = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Main
+        fields = '__all__'
 
 
 class MainMenuInline(admin.TabularInline):
@@ -13,6 +23,7 @@ class MainMenuInline(admin.TabularInline):
 class AboutBannersInline(SingletonModelAdmin):
     fields = ['title', 'subtitle', 'text', 'phone_1', 'phone_2', 'email_1', 'email_2', 'instagram', 'copywrite']
     inlines = [MainMenuInline]
+    form = MainAdminForm
 
 
 @admin.register(Form)
