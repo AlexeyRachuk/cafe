@@ -1,0 +1,9 @@
+                    <ul class="nav">
+                        {% for main_menu in main_menus %}
+                        <li class="scroll-to-section"><a href="{{ main_menu.url }}">{{ main_menu.title }}</a></li>
+                        <!--<li class="scroll-to-section"><a href="#top" class="active">Home</a></li>-->
+                        {% endfor %}
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Меню</span>
+                    </a>

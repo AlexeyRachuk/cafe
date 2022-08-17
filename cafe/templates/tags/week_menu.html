@@ -1,0 +1,16 @@
+{% load tags %}
+{% for week_menu in week_menus %}
+<section class="section" id="offers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="section-heading">
+                    <h6>{{ week_menu.title }}</h6>
+                    <h2>{{ week_menu.subtitle }}</h2>
+                </div>
+            </div>
+        </div>
+        {% get_week_menu_items %}
+    </div>
+</section>
+{% endfor %}

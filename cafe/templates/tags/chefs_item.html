@@ -1,0 +1,20 @@
+{% load tags %}
+{% for chefs_item in chefs_items %}
+<div class="col-lg-4">
+    <div class="chef-item">
+        <div class="thumb">
+            <div class="overlay"></div>
+            <ul class="social-icons">
+                <span style="color:#fff;">{{ chefs_item.descr }}</span><br><br>
+                <li><a href="{{ chefs_item.instagram }}"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <img src="{{ chefs_item.photo.url }}" alt="Chef #1">
+        </div>
+        <div class="down-content">
+            <h4>{{ chefs_item.title }}</h4>
+            <span>{{ chefs_item.subtitle }}</span>
+        </div>
+    </div>
+
+</div>
+{% endfor %}

@@ -1,0 +1,18 @@
+{% load tags %}
+{% for about_chef in about_chefs %}
+<section class="section" id="chefs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="section-heading">
+                    <h6>{{ about_chef.title }}</h6>
+                    <h2>{{ about_chef.subtitle }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% get_chefs_item %}
+        </div>
+    </div>
+</section>
+{% endfor %}

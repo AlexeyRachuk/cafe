@@ -1,0 +1,30 @@
+{% load tags %}
+<div id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="left-content">
+                    <div class="inner-content">
+                        {% for main_banner in main_banners %}
+                        <h4>{{ main_banner.title }}</h4>
+                        <h6>{{ main_banner.subtitle }}</h6>
+                        <div class="main-white-button scroll-to-section">
+                            <a href="#reservation">{{ main_banner.button_title }}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="main-banner header-text">
+                    <div class="Modern-Slider">
+                        <!-- Item -->
+                        {% get_image_sider %}
+                        <!-- // Item -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

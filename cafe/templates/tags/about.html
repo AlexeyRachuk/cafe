@@ -1,0 +1,28 @@
+{% load tags %}
+{% for about in abouts%}
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="left-text-content">
+
+                    <div class="section-heading">
+                        <h6>{{ about.title }}</h6>
+                        <h2>{{ about.subtitle }}</h2>
+                    </div>
+                    <p>{{ about.text }}</p>
+                    {% get_about_photo %}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="right-content">
+                    <div class="thumb">
+                        <a rel="nofollow" href="{{ about.url }}"><i class="fa fa-play"></i></a>
+                        <img src="{{ about.video_prew.url }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

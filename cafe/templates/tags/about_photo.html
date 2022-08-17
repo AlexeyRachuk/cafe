@@ -1,0 +1,7 @@
+<div class="row">
+    {% for about_photo in about_photos %}
+    <div class="col-4">
+        <img src="{{ about_photo.photo.url }}" alt="">
+    </div>
+    {% endfor %}
+</div>
