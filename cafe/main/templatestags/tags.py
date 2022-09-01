@@ -75,3 +75,20 @@ def get_week_menu_items():
     week_menu_item = WeekMenu.objects.all().filter(draft=True).order_by('order')
     return {'week_menu_items': week_menu_item}
 
+
+@register.inclusion_tag('tags/week_menu_item_breakfast.html')
+def get_week_menu_items_breakfast():
+    week_menu_item_breakfast = WeekMenu.objects.all().filter(draft=True, breakfast=True).order_by('order')
+    return {'week_menu_items_breakfast': week_menu_item_breakfast}
+
+
+@register.inclusion_tag('tags/week_menu_item_lunch.html')
+def get_week_menu_items_lunch():
+    week_menu_item_lunch = WeekMenu.objects.all().filter(draft=True, lunch=True).order_by('order')
+    return {'week_menu_items_lunch': week_menu_item_lunch}
+
+
+@register.inclusion_tag('tags/week_menu_item_dinner.html')
+def get_week_menu_items_dinner():
+    week_menu_item_dinner = WeekMenu.objects.all().filter(draft=True, dinner=True).order_by('order')
+    return {'week_menu_items_dinner': week_menu_item_dinner}

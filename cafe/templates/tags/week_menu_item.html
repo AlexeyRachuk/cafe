@@ -1,4 +1,5 @@
 {% load static %}
+{% load tags %}
 <div class="row">
     <div class="col-lg-12">
         <div class="row" id="tabs">
@@ -22,74 +23,21 @@
                 <section class='tabs-content'>
                     <article id='breakfast'>
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="left-list">
-                                        {% for week_menu_item in week_menu_items %}
-                                        {% if week_menu_item.type.url == breakfast %}
-                                        <div class="col-lg-12">
-                                            <div class="tab-item">
-                                                <img src="{{ week_menu_item.photo.url }}" alt="{{ week_menu_item.title }}">
-                                                <h4>{{ week_menu_item.title }}</h4>
-                                                <p>{{ week_menu_item.descr|safe }}</p>
-                                                <div class="price">
-                                                    <h6>{{ week_menu_item.price }} ₽</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
+                            {% get_week_menu_items_breakfast %}
                         </div>
                     </article>
                     <article id='lunch'>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="left-list">
-                                        {% for week_menu_item in week_menu_items %}
-                                        {% if week_menu_item.type.url == lunch %}
-                                        <div class="col-lg-12">
-                                            <div class="tab-item">
-                                                <img src="{{ week_menu_item.photo.url }}" alt="">
-                                                <h4>{{ week_menu_item.title }}</h4>
-                                                <p>{{ week_menu_item.descr }}</p>
-                                                <div class="price">
-                                                    <h6>{{ week_menu_item.price }} ₽</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
+                                  {% get_week_menu_items_lunch %}
                                 </div>
                             </div>
                         </div>
                     </article>
                     <article id='dinner'>
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="left-list">
-                                        {% for week_menu_item in week_menu_items %}
-                                        {% if week_menu_item.type.url == dinner %}
-                                        <div class="col-lg-12">
-                                            <div class="tab-item">
-                                                <img src="{{ week_menu_item.photo.url }}" alt="">
-                                                <h4>{{ week_menu_item.title }}</h4>
-                                                <p>{{ week_menu_item.descr }}</p>
-                                                <div class="price">
-                                                    <h6>{{ week_menu_item.price }} ₽</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
+                            {% get_week_menu_items_dinner %}
                         </div>
                     </article>
 

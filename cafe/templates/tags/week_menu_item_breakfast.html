@@ -1,0 +1,18 @@
+<div class="col-lg-12">
+    <div class="row">
+        <div class="left-list">
+            {% for week_menu_item_breakfast in week_menu_items_breakfast %}
+            <div class="col-lg-12">
+                <div class="tab-item">
+                    <img src="{{ week_menu_item_breakfast.photo.url }}" alt="{{ week_menu_item_breakfast.title }}">
+                    <h4>{{ week_menu_item_breakfast.title }}</h4>
+                    <p>{{ week_menu_item_breakfast.descr|safe }}</p>
+                    <div class="price">
+                        <h6>{{ week_menu_item_breakfast.price }} ₽</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

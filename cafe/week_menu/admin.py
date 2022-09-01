@@ -27,10 +27,10 @@ class Menu(admin.ModelAdmin):
 
 @admin.register(WeekMenu)
 class Menu(admin.ModelAdmin):
-    list_display = ('title', 'price', 'get_image', 'order', 'draft')
+    list_display = ('title', 'price', 'get_image', 'breakfast', 'lunch', 'dinner', 'order', 'draft')
     list_filter = ('title',)
     search_fields = ('title', 'price')
-    list_editable = ('draft',)
+    list_editable = ('breakfast', 'lunch', 'dinner', 'draft',)
     form = WeekMenuAdminForm
 
     def get_image(self, obj):

@@ -30,7 +30,9 @@ class WeekMenu(models.Model):
     descr = models.CharField('Описание', max_length=255)
     price = models.IntegerField('Цена')
     photo = models.ImageField('Фото', upload_to='image/')
-    type = models.ManyToManyField(WeekMenuType, verbose_name='Тип меню', related_name='type_id')
+    breakfast = models.BooleanField('Завтрак', default=False)
+    lunch = models.BooleanField('Обед', default=False)
+    dinner = models.BooleanField('Ужин', default=False)
     order = models.SmallIntegerField('Порядок', default=0)
     draft = models.BooleanField('Публикация', default=True)
 
