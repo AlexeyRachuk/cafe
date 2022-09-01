@@ -21,7 +21,7 @@ class MainMenuInline(admin.TabularInline):
 
 @admin.register(Main)
 class AboutBannersInline(SingletonModelAdmin):
-    fields = ['title', 'subtitle', 'text', 'phone_1', 'phone_2', 'email_1', 'email_2', 'instagram', 'copywrite']
+    fields = ['title', 'subtitle', 'text', 'phone_1', 'phone_2', 'email_1', 'email_2', 'instagram', 'copywrite', 'seo_title', 'seo_descr']
     inlines = [MainMenuInline]
     form = MainAdminForm
 

@@ -28,6 +28,8 @@ class Main(models.Model):
     email_2 = models.CharField('Email 2', max_length=50)
     instagram = models.URLField('Инстаграм', max_length=100)
     copywrite = models.CharField('Копирайт', max_length=100)
+    seo_title = models.CharField('Seo Title', max_length=100)
+    seo_descr = models.CharField('Seo Title', max_length=255)
 
     def __str__(self):
         return "Основные"
@@ -39,7 +41,7 @@ class Main(models.Model):
 
 class MainMenu(models.Model):
     title = models.CharField('Пункт меню', max_length=50)
-    url = models.CharField('Ссылка меню', max_length=50, help_text='Не менять')
+    url = models.CharField('Ссылка меню', max_length=50)
     order = models.SmallIntegerField('Порядок', default=0)
     draft = models.BooleanField('Публикация', default=True)
     id_menu = models.ForeignKey(Main, on_delete=models.CASCADE, related_name='id_menu', default='')
