@@ -6,7 +6,7 @@ from .models import Form
 person = ['1', '2', '3', '4', '5', '6', '7', '8']
 time = ['Завтрак', 'Обед', 'Ужин']
 
-
+# Форма бронирования
 class FormPage(forms.ModelForm):
     class Meta:
         model = Form

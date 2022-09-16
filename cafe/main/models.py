@@ -3,6 +3,7 @@ from datetime import date
 from django.db import models
 
 
+# Модель формы бронирования
 class Form(models.Model):
     name = models.CharField('Имя', max_length=50)
     email = models.CharField('Email', max_length=50)
@@ -18,6 +19,7 @@ class Form(models.Model):
         return "Заявки с формы бронирования"
 
 
+# Данные: с баннера, контакты, seo
 class Main(models.Model):
     title = models.CharField('Заголовок блока', max_length=50)
     subtitle = models.CharField('Загловок', max_length=100)
@@ -39,6 +41,7 @@ class Main(models.Model):
         verbose_name_plural = "Основные"
 
 
+# Модель меню
 class MainMenu(models.Model):
     title = models.CharField('Пункт меню', max_length=50)
     url = models.CharField('Ссылка меню', max_length=50)

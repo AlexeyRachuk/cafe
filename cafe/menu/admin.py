@@ -7,6 +7,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import Menu, AboutMenu
 
 
+# CKEditor
 class MenuAdminForm(forms.ModelForm):
     descr = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
 
@@ -15,11 +16,13 @@ class MenuAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+# Блок меню в админке
 @admin.register(AboutMenu)
 class AboutMenuInline(SingletonModelAdmin):
     fields = ['title', 'subtitle']
 
 
+# Компоненты меню в админке
 @admin.register(Menu)
 class Menu(admin.ModelAdmin):
     list_display = ('name', 'price', 'get_image', 'order', 'draft')

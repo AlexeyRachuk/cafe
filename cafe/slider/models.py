@@ -1,11 +1,11 @@
 from django.db import models
 
 
+# Модель слайдера
 class MainBanner(models.Model):
     title = models.CharField('Заголовок баннера', max_length=50)
     subtitle = models.CharField('Подзаголвок баннера', max_length=100)
     button_title = models.CharField('Текст кнопки', max_length=50)
-
 
     def __str__(self):
         return "Слайдер"
@@ -14,6 +14,7 @@ class MainBanner(models.Model):
         verbose_name = "Слайдер"
 
 
+# Модель баннеров глайдера
 class Banners(models.Model):
     photo = models.ImageField('Фото баннера', upload_to="review/", null=True)
     order = models.SmallIntegerField('Порядок', default=0)

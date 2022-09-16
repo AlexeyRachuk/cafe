@@ -5,7 +5,7 @@ from main.models import Main
 from .forms import FormPage
 
 
-
+# Представление формы бронирования
 def index(request):
     error = ''
     if request.method == 'POST':

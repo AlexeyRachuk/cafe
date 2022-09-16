@@ -7,6 +7,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import WeekMenu, WeekMenuType, WeekMenuAbout
 
 
+# CKEditor
 class WeekMenuAdminForm(forms.ModelForm):
     descr = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
 
@@ -15,16 +16,19 @@ class WeekMenuAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+# Блок недельного меню в админке
 @admin.register(WeekMenuAbout)
 class AboutMenuInline(SingletonModelAdmin):
     fields = ['title', 'subtitle']
 
 
+# Типы недельного меню в админке
 @admin.register(WeekMenuType)
 class Menu(admin.ModelAdmin):
     list_display = ('title', 'url',)
 
 
+# Компоненты недельного меню в админке
 @admin.register(WeekMenu)
 class Menu(admin.ModelAdmin):
     list_display = ('title', 'price', 'get_image', 'breakfast', 'lunch', 'dinner', 'order', 'draft')

@@ -7,6 +7,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from .models import AboutChefs, Chefs
 
 
+# CKEditor
 class ChefsAdminForm(forms.ModelForm):
     descr = forms.CharField(label='Описание', widget=CKEditorUploadingWidget())
 
@@ -15,11 +16,13 @@ class ChefsAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+# Данные блока шефов в админке
 @admin.register(AboutChefs)
 class AboutChefsInline(SingletonModelAdmin):
     fields = ['title', 'subtitle']
 
 
+# Шефы в админке
 @admin.register(Chefs)
 class Chefs(admin.ModelAdmin):
     list_display = ('title', 'get_image', 'order', 'draft')

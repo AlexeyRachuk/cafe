@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Модель блока «О нас»
 class About(models.Model):
     title = models.CharField('Название блока', max_length=50)
     subtitle = models.CharField('Заголовок блока', max_length=50)
@@ -15,6 +16,7 @@ class About(models.Model):
         verbose_name = "О нас"
 
 
+# Модель баннера в блоке «О нас»
 class AboutBanners(models.Model):
     photo = models.ImageField('Фото блока', upload_to="image/", null=True)
     order = models.SmallIntegerField('Порядок', default=0)

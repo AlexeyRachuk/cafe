@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Модель блока «Недельное меню»
 class WeekMenuAbout(models.Model):
     title = models.CharField('Заголовок блока', max_length=50)
     subtitle = models.CharField('Заголовок блока', max_length=100)
@@ -12,6 +13,7 @@ class WeekMenuAbout(models.Model):
         verbose_name = "Настройки недельного меню"
 
 
+# Модель типов недельного меню
 class WeekMenuType(models.Model):
     title = models.CharField('Тип меню', max_length=50)
     url = models.CharField('Ссылка для таба', max_length=50)
@@ -25,6 +27,7 @@ class WeekMenuType(models.Model):
         verbose_name_plural = "Типы меню для табов"
 
 
+# Модель компонентов недельного меню
 class WeekMenu(models.Model):
     title = models.CharField('Название', max_length=100)
     descr = models.CharField('Описание', max_length=255)

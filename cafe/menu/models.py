@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Модель блока «Меню»
 class AboutMenu(models.Model):
     title = models.CharField('Название блока', max_length=50)
     subtitle = models.CharField('Заголовок', max_length=50)
@@ -12,6 +13,7 @@ class AboutMenu(models.Model):
         verbose_name = "Настройки меню"
 
 
+# Модель компонентов меню
 class Menu(models.Model):
     name = models.CharField('Название блюда', max_length=70)
     descr = models.CharField('Описание блюда', max_length=255)
